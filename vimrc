@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Chiel92/vim-autoformat'
 let g:formatdef_clangformat = "'clang-format -style=LLVM'"
+noremap  :Autoformat<CR>
 
 
 " All of your Plugins must be added before the following line
