@@ -11,6 +11,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'Chiel92/vim-autoformat'
+let g:formatdef_clangformat = "'clang-format -style=LLVM'"
 
 
 " All of your Plugins must be added before the following line
@@ -27,8 +28,6 @@ filetype plugin indent on    " required
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
-
-
 
 set t_Co=256  " make use of 256 terminal colors 
 color summerfruit256
