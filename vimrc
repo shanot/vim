@@ -29,6 +29,7 @@ filetype plugin indent on    " required
 
 set t_Co=256  " make use of 256 terminal colors 
 color summerfruit256
+syntax on
 
 set autoindent
 set tabstop=2
