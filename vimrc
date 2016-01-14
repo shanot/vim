@@ -21,6 +21,10 @@ let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'junegunn/vim-easy-align'
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
+
 "rainbow parenthesis
 " set the ctermfgs to change parens colors.  Set up for a light background
 let g:rainbow_active = 1
@@ -79,3 +83,5 @@ set showmatch           " highlight matching [{()}]
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
+set backspace=2 " make backspace work like most other apps
