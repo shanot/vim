@@ -21,6 +21,8 @@ let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
 
 Plugin 'flazz/vim-colorschemes'
 
+Plugin 'jiangmiao/auto-pairs'
+
 Plugin 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
@@ -51,7 +53,6 @@ let g:rainbow_conf = {
       \ }
       \}
 
-
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -77,6 +78,9 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 autocmd FileType make set noexpandtab
+
+autocmd FileType python set tabstop=4
+autocmd FileType python set shiftwidth=4
 
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
