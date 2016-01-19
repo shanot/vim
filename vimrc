@@ -18,6 +18,28 @@ Plugin 'octol/vim-cpp-enhanced-highlight'
 
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
+let g:rainbow_conf = {
+			\ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
+			\ 'ctermfgs': ['darkmagenta', 'darkgreen', 'darkgrey', 'darkblue'],
+			\ 'operators': '_,_',
+			\ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
+			\ 'separately': {
+			\   '*': {},
+			\   'tex': {
+			\     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
+			\   },
+			\   'lisp': {
+			\     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
+			\   },
+			\   'vim': {
+			\     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
+			\   },
+			\   'html': {
+			\     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
+			\   },
+			\   'css': 0,
+			\ }
+			\}
 
 Plugin 'flazz/vim-colorschemes'
 
@@ -27,31 +49,13 @@ Plugin 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-"rainbow parenthesis
-" set the ctermfgs to change parens colors.  Set up for a light background
-let g:rainbow_active = 1
-let g:rainbow_conf = {
-      \ 'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick'],
-      \ 'ctermfgs': ['darkmagenta', 'darkgreen', 'darkgrey', 'darkblue'],
-      \ 'operators': '_,_',
-      \ 'parentheses': ['start=/(/ end=/)/ fold', 'start=/\[/ end=/\]/ fold', 'start=/{/ end=/}/ fold'],
-      \ 'separately': {
-      \   '*': {},
-      \   'tex': {
-      \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/'],
-      \   },
-      \   'lisp': {
-      \     'guifgs': ['royalblue3', 'darkorange3', 'seagreen3', 'firebrick', 'darkorchid3'],
-      \   },
-      \   'vim': {
-      \     'parentheses': ['start=/(/ end=/)/', 'start=/\[/ end=/\]/', 'start=/{/ end=/}/ fold', 'start=/(/ end=/)/ containedin=vimFuncBody', 'start=/\[/ end=/\]/ containedin=vimFuncBody', 'start=/{/ end=/}/ fold containedin=vimFuncBody'],
-      \   },
-      \   'html': {
-      \     'parentheses': ['start=/\v\<((area|base|br|col|embed|hr|img|input|keygen|link|menuitem|meta|param|source|track|wbr)[ >])@!\z([-_:a-zA-Z0-9]+)(\s+[-_:a-zA-Z0-9]+(\=("[^"]*"|'."'".'[^'."'".']*'."'".'|[^ '."'".'"><=`]*))?)*\>/ end=#</\z1># fold'],
-      \   },
-      \   'css': 0,
-      \ }
-      \}
+Plugin 'vim-pandoc/vim-pandoc'
+Plugin 'vim-pandoc/vim-pandoc-syntax'
+
+Plugin 'vim-airline/vim-airline'
+au VimEnter * exec 'AirlineTheme papercolor'
+set laststatus=2
+set ttimeoutlen=50
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -68,16 +72,15 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set t_Co=256  " make use of 256 terminal colors 
+set t_Co=256  " make use of 256 terminal colors
 set background=light
 color github
 syntax on
 
-set autoindent
-autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
-
-autocmd FileType python set tabstop=4|set shiftwidth=4
-
+set     autoindent
+autocmd FileType *        set tabstop=2|set shiftwidth=2|set noexpandtab
+autocmd FileType python   set tabstop=4|set shiftwidth=4
+autocmd FileType pandoc   set tabstop=4|set shiftwidth=4|set expandtab
 autocmd FileType markdown set tabstop=4|set shiftwidth=4|set expandtab
 
 set lazyredraw          " redraw only when we need to.
@@ -86,6 +89,4 @@ set showmatch           " highlight matching [{()}]
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
-set backspace=2 " make backspace work like most other apps
-
-set ruler " show line and column n
+set backspace=indent,eol,start
