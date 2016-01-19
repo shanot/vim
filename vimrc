@@ -74,13 +74,11 @@ color github
 syntax on
 
 set autoindent
-set tabstop=2
-set shiftwidth=2
-set expandtab
-autocmd FileType make set noexpandtab
+autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 
-autocmd FileType python set tabstop=4
-autocmd FileType python set shiftwidth=4
+autocmd FileType python set tabstop=4|set shiftwidth=4
+
+autocmd FileType markdown set tabstop=4|set shiftwidth=4|set expandtab
 
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
