@@ -89,3 +89,5 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 set backspace=2 " make backspace work like most other apps
+
+set ruler " show line and column n
