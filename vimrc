@@ -49,8 +49,10 @@ Plugin 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+if v:version >= 704
 Plugin 'vim-pandoc/vim-pandoc'
 Plugin 'vim-pandoc/vim-pandoc-syntax'
+endif
 
 Plugin 'vim-airline/vim-airline'
 au VimEnter * exec 'AirlineTheme papercolor'
