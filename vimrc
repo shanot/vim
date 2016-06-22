@@ -81,9 +81,9 @@ syntax on
 
 set     autoindent
 autocmd FileType *        set tabstop=2|set shiftwidth=2|set noexpandtab
-autocmd FileType python   set tabstop=4|set shiftwidth=4
-autocmd FileType pandoc   set tabstop=4|set shiftwidth=4|set expandtab
-autocmd FileType markdown set tabstop=4|set shiftwidth=4|set expandtab
+autocmd FileType python   set tabstop=4|set shiftwidth=4| set expandtab
+autocmd FileType pandoc   set tabstop=4|set shiftwidth=4
+autocmd FileType markdown set tabstop=4|set shiftwidth=4
 
 set lazyredraw          " redraw only when we need to.
 set showmatch           " highlight matching [{()}]
