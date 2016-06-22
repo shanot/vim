@@ -55,6 +55,7 @@ Plugin 'vim-pandoc/vim-pandoc-syntax'
 endif
 
 Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 au VimEnter * exec 'AirlineTheme papercolor'
 set laststatus=2
 set ttimeoutlen=50
