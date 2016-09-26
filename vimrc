@@ -14,7 +14,6 @@ Plugin 'Chiel92/vim-autoformat'
 let g:formatdef_clangformat = "'clang-format -style=LLVM'"
 noremap  :Autoformat<CR>
 
-Plugin 'octol/vim-cpp-enhanced-highlight'
 
 Plugin 'luochen1990/rainbow'
 let g:rainbow_active = 1 " 0 if you want to enable it later via :RainbowToggle
@@ -43,22 +42,9 @@ let g:rainbow_conf = {
 
 Plugin 'flazz/vim-colorschemes'
 
-Plugin 'jiangmiao/auto-pairs'
-
 Plugin 'junegunn/vim-easy-align'
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-if v:version >= 704
-Plugin 'vim-pandoc/vim-pandoc'
-Plugin 'vim-pandoc/vim-pandoc-syntax'
-endif
-
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-au VimEnter * exec 'AirlineTheme papercolor'
-set laststatus=2
-set ttimeoutlen=50
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -93,3 +79,5 @@ set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
 set backspace=indent,eol,start
+set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
+set laststatus=2
