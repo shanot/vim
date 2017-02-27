@@ -18,7 +18,7 @@ set showmatch           " highlight matching [{()}]
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-nnoremap / /\v          " use standard regexp search
+nnoremap / /\v 
 vnoremap / /\v
 
 set backspace=indent,eol,start
