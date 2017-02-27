@@ -18,8 +18,6 @@ set showmatch           " highlight matching [{()}]
 
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
-nnoremap / /\v 
-vnoremap / /\v
 
 set backspace=indent,eol,start
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
