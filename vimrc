@@ -3,7 +3,6 @@ set nocompatible              " be iMproved, required
 
 set t_Co=256  " make use of 256 terminal colors
 set background=light
-color github
 syntax on
 
 set     autoindent
