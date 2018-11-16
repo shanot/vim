@@ -6,10 +6,6 @@ syntax on
 
 set     autoindent
 autocmd FileType *        set tabstop=2|set shiftwidth=2|set noexpandtab
-autocmd FileType python   set tabstop=4|set shiftwidth=4| set expandtab
-autocmd FileType pandoc   set tabstop=4|set shiftwidth=4
-autocmd FileType markdown set tabstop=2|set shiftwidth=2|set expandtab
-autocmd FileType tsv      set tabstop=20|set nowrap|set listchars=eol:\ ,tab:»-,trail:·,precedes:…,extends:…,nbsp:‗|set list|set number
 
 set lazyredraw          " redraw only when we need to.
 
@@ -17,13 +13,14 @@ set lazyredraw          " redraw only when we need to.
 " autocomplete braces
 inoremap " ""<left>
 inoremap ' ''<left>
-inoremap ( ()<left>
-inoremap [ []<left>
-inoremap { {}<left>
-inoremap {<CR> {<CR>}<ESC>O
-inoremap {;<CR> {<CR>};<ESC>O
+inoremap (( ()<left>
+inoremap [[ []<left>
+inoremap {{ {}<left>
+inoremap {{<CR> {<CR>}<ESC>O
+inoremap {{;<CR> {<CR>};<ESC>O
 set showmatch           " highlight matching [{()}]
 
+" search
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
 
