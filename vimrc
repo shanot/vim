@@ -2,7 +2,6 @@ set nocompatible              " be iMproved, required
 
 
 set t_Co=256  " make use of 256 terminal colors
-set background=light
 syntax on
 
 set     autoindent
@@ -14,6 +13,15 @@ autocmd FileType tsv      set tabstop=20|set nowrap|set listchars=eol:\ ,tab:»-
 
 set lazyredraw          " redraw only when we need to.
 
+" braces
+" autocomplete braces
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 set showmatch           " highlight matching [{()}]
 
 set incsearch           " search as characters are entered
