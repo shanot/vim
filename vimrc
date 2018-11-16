@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 
 
 set t_Co=256  " make use of 256 terminal colors
+colorscheme delek
 syntax on
 
 set     autoindent
