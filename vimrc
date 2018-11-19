@@ -12,8 +12,8 @@ set lazyredraw          " redraw only when we need to.
 
 " braces
 " autocomplete braces
-inoremap " ""<left>
-inoremap ' ''<left>
+inoremap "" ""<left>
+inoremap '' ''<left>
 inoremap (( ()<left>
 inoremap [[ []<left>
 inoremap {{ {}<left>
@@ -28,3 +28,6 @@ set hlsearch            " highlight matches
 set backspace=indent,eol,start
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 set laststatus=2
+
+" filetype pluggin
+filetype plugin on
