@@ -1,21 +1,19 @@
 set nocompatible              " be iMproved, required
 
+call plug#begin('~/.vim/plugged')
+Plug 'pangloss/vim-javascript'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+call plug#end()
 
 set t_Co=256  " make use of 256 terminal colors
 syntax on
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 set laststatus=2
+set number relativenumber
 
 " filetype pluggin
 filetype plugin on
-
-" Plug
-call plug#begin('~/.vim/plugged')
-Plug 'pangloss/vim-javascript'
-
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-call plug#end()
 
 set     autoindent
 autocmd FileType *        set tabstop=2|set shiftwidth=2|set noexpandtab
