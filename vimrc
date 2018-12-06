@@ -1,14 +1,6 @@
 set nocompatible              " be iMproved, required
 
-call plug#begin('~/.vim/plugged')
-Plug 'pangloss/vim-javascript'
-Plug '/usr/local/opt/fzf'
-Plug 'junegunn/fzf.vim'
-Plug 'dylanaraps/wal.vim'
-call plug#end()
-
 set t_Co=256  " make use of 256 terminal colors
-" colorscheme wal
 syntax on
 set statusline=%F%m%r%h%w[%L][%{&ff}]%y[%p%%][%04l,%04v]
 set laststatus=2
@@ -37,14 +29,33 @@ set showmatch           " highlight matching [{()}]
 " search
 set incsearch           " search as characters are entered
 set hlsearch            " highlight matches
+
+" keybindings
+nnoremap ; :
+
+" plugin stuff all goes here
+if v:version < 703
+    finish
+endif
+
+call plug#begin('~/.vim/plugged')
+Plug 'pangloss/vim-javascript'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'dylanaraps/wal.vim'
+call plug#end()
+
+" appearance
+colorscheme wal
+
+" keybindings
+nnoremap <C-o> :GFiles 
+nnoremap § :Rg! 
+
+" search
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
   \   <bang>0 ? fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'up:60%')
   \           : fzf#vim#with_preview({'options': '--delimiter : --nth 4..'}, 'right:50%:hidden', '?'),
   \   <bang>0)
-
-" general keybinds
-nnoremap ; :
-nnoremap <C-o> :GFiles 
-nnoremap § :Rg! 
