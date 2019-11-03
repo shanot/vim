@@ -46,16 +46,6 @@ if v:version < 703
   finish
 endif
 
-" ale settings
-let g:ale_linters = {'cpp': ['clangd']}
-" let g:ale_cpp_clangd_options = '-std=c++17 -Wall'
-
-let g:ale_sign_column_always = 1
-let g:ale_change_sign_column_color = 1
-highlight link ALESignColumnWithErrors    Comment
-highlight link ALESignColumnWithoutErrors Comment
-highlight link ALEError ErrorMsg
-
 set rtp+=/usr/local/opt/fzf
 call plug#begin('~/.vim/plugged')
 Plug 'pangloss/vim-javascript'
