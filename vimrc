@@ -56,11 +56,12 @@ highlight link ALESignColumnWithErrors    Comment
 highlight link ALESignColumnWithoutErrors Comment
 highlight link ALEError ErrorMsg
 
-let g:ale_completion_enabled = 0
-set completeopt=menu,menuone,preview,noselect,noinsert
-
+set rtp+=/usr/local/opt/fzf
 call plug#begin('~/.vim/plugged')
 Plug 'pangloss/vim-javascript'
 Plug 'leafgarland/typescript-vim'
 Plug 'digitaltoad/vim-pug'
+Plug '/usr/local/opt/fzf'
+Plug 'junegunn/fzf.vim'
 call plug#end()
+
