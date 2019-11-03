@@ -55,3 +55,6 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 call plug#end()
 
+
+nnoremap <C-o> :Files <CR>
+nnoremap <C-f> :Rg <CR>
