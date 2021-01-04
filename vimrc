@@ -8,6 +8,8 @@ if v:version > 703
 set number relativenumber
 endif
 
+" colorscheme github
+
 " filetype pluggin
 filetype plugin on
 
@@ -39,7 +41,6 @@ nnoremap ; :
 nnoremap : ;
 vnoremap ; :
 vnoremap : ;
-inoremap jk 
 
 " plugin stuff all goes after here
 if v:version < 703
@@ -56,5 +57,7 @@ Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
-nnoremap <C-o> :Files <CR>
+nnoremap <C-o> :GFiles <CR>
 nnoremap <C-f> :Rg <CR>
+
+set tags=./tags
